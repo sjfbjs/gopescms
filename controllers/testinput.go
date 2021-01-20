@@ -30,10 +30,17 @@ func (c *TestInputController) Get() {
 	//name := c.GetString("name")
 	//// name := c.Input().Get("name")
 	//c.Ctx.WriteString(name+"</html>")
-	c.Ctx.WriteString(`<html><form action="http://127.0.0.1:8080/test_input"  method="POST">
+	name := c.GetSession("name")
+	password := c.GetSession("password")
+	//if name != nil {
+	if nameString, ok := name.(string); ok && nameString != "" {
+		c.Ctx.WriteString("Username:" + name.(string) + ", password:" + password.(string))
+	} else {
+		c.Ctx.WriteString(`<html><form action="http://127.0.0.1:8080/test_input"  method="POST">
 									<input type="text" name="Username" />
 									<input type="password" name="Password" />
 									<input type="Submit" value="提交" />
 									</form>
 								</html>`)
+	}
 }
