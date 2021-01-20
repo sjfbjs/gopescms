@@ -3,6 +3,7 @@ package controllers
 import (
 	"fmt"
 	beego "github.com/beego/beego/v2/server/web"
+	"github.com/spf13/cast"
 )
 
 type User struct {
@@ -31,6 +32,8 @@ func (c *TestInputController) Get() {
 	//// name := c.Input().Get("name")
 	//c.Ctx.WriteString(name+"</html>")
 	name := c.GetSession("name")
+	n1s := cast.ToString(name)
+	fmt.Println(n1s)
 	password := c.GetSession("password")
 	//if name != nil {
 	if nameString, ok := name.(string); ok && nameString != "" {
