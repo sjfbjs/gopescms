@@ -6,7 +6,8 @@ require github.com/beego/beego/v2 v2.0.1
 
 require (
 	github.com/360EntSecGroup-Skylar/excelize/v2 v2.3.2 // indirect
-	github.com/astaxie/beego v1.12.3 // indirect
+	github.com/astaxie/beego v1.12.3
+	github.com/go-sql-driver/mysql v1.5.0
 	github.com/prometheus/client_golang v1.9.0 // indirect
 	github.com/prometheus/procfs v0.3.0 // indirect
 	github.com/shiena/ansicolor v0.0.0-20200904210342-c7312218db18 // indirect
